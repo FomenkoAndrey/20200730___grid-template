@@ -23,6 +23,17 @@
 //@import "footer";
 
 
+
+//НЕДОСТАСТКИ РАБОТЫ В CSS:
+//1. Много работаю скролом.
+//2. Постоянное копирование цветов.
+//3. Постоянное копирование размеров.
+//4. Необходимость искать селекторы в большом файле, возможность ошибиться при этом.
+//5. Ошибки, которые тяжело найти.
+//6. Перерасход времени.
+
+//SCSS
+
 * {
   box-sizing: border-box;
 }
@@ -36,7 +47,6 @@ html {
 
 h1 {
   font-family: "Roboto Slab", serif;
-  font-size: 3.75rem;
 }
 
 h2 {}
@@ -179,7 +189,6 @@ input {}
 
 .header-content__title {
   color: #ffffff;
-  margin: 0 0 53px 0;
   text-align: center;
   letter-spacing: 0.08em;
   font-weight: 300;
@@ -311,4 +320,32 @@ input {}
 
 .skill-item:hover .skill-item__link {
   color: #d66926;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  .header-content__title {
+    margin: 0 0 53px 0;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .header-content__title {
+    margin: 0 0 43px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+  .header-content__title {
+    margin: 0 0 33px 0;
+  }
 }
