@@ -50,21 +50,35 @@ a {
 
 input {}
 
-.btn {
+.btn,
+.btn-accent {
   display: block;
   padding: 18px 20px;
   height: 60px;
   font-size: 1.125rem;
-  border: 2px solid #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
-  min-width: 250px;
+  transition: background-color 0.5s;
   text-align: center;
   letter-spacing: 0.1em;
-  transition: background-color 0.5s;
+}
+
+.btn {
+  border: 2px solid #ffffff;
+  //background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(#ffffff, 0.1);
+  min-width: 250px;
+}
+
+.btn-accent {
+  border: 2px solid #2d3651;
+  //background-color: rgba(45, 54, 81, 0.1);
+  background-color: rgba(#2d3651, 0.8);
+  min-width: 350px;
 }
 
 .btn:hover,
-.btn:focus {
+.btn:focus,
+.btn-accent:hover,
+.btn-accent:focus {
   background-color: #d66926;
 }
 
@@ -183,18 +197,26 @@ input {}
 
 .skills {
   padding: 10px;
+  margin-bottom: 30px;
 }
 
 .skills__container {
+  margin-bottom: 20px;
   display: grid;
   grid-gap: 10px;
   grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+}
+
+.skills__button {
+  display: flex;
+  justify-content: center;
 }
 
 .skill-item {
   position: relative;
   background-color: #2d3651;
   min-height: calc(33.333vh - 13.333px);
+  overflow: hidden;
   //TODO: не менее 200px по высоте
 }
 
@@ -242,6 +264,7 @@ input {}
   left: 0;
   background-position: 50% 50%;
   background-size: cover;
+  transition: transform 0.5s;
 }
 
 .skill-item__overlay {
@@ -253,9 +276,39 @@ input {}
   z-index: 1;
   background-color: #2d3651;
   opacity: 0.8;
+  transition: opacity 0.5s;
 }
 
 .skill-item__title {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 2;
+  margin: 0;
+}
+
+.skill-item__link {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  transition: color 0.5s;
+}
+
+.skill-item:hover .skill-item__overlay {
+  opacity: 0.95 !important;
+}
+
+.skill-item:hover .skill-item__image {
+  transform: scale(1.1);
+}
+
+.skill-item:hover .skill-item__link {
+  color: #d66926;
 }
