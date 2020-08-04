@@ -488,6 +488,14 @@ a {
   min-width: 250px;
   text-align: center;
   letter-spacing: 0.1em;
+  -webkit-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #d66926;
 }
 
 .header {
@@ -585,6 +593,14 @@ a {
   display: block;
   letter-spacing: 0.09em;
   font-size: 1.125rem;
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.header-navbar__link:hover,
+.header-navbar__link:focus {
+  color: #d66926;
 }
 
 .header-content {
@@ -596,7 +612,7 @@ a {
   color: #ffffff;
   margin: 0 0 53px 0;
   text-align: center;
-  letter-spacing: 0.078em;
+  letter-spacing: 0.08em;
   font-weight: 300;
   line-height: 1.2;
 }
