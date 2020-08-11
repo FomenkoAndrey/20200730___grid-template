@@ -8,21 +8,24 @@
     display: none;
   }
   &__list {
-    list-style: none;
-    margin: 0 -20px 0 0;
-    padding: 0;
-    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
     justify-content: end;
+
+    width: 100%;
+
+    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+    @include unlist(0 -20px 0 0);
   }
 
   &__link {
-    padding: 20px;
     display: block;
-    letter-spacing: 0.09em;
-    font-size: 1.125rem;
+
+    padding: 20px;
+
     transition: color 0.5s;
+    letter-spacing: 0.09em;
+
+    font-size: 1.125rem;
 
     &:hover,
     &:focus {
