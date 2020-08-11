@@ -7,7 +7,7 @@
   &__link {
     display: block;
 
-    padding: 20px 20px 20px 0;
+    padding: $gap $gap $gap 0;
   }
 
   &__accent {
@@ -19,4 +19,3 @@
     border: 3px solid $color-highlight;
   }
 }
-

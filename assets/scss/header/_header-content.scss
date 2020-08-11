@@ -30,10 +30,22 @@
 
   &__buttons {
     display: flex;
-    justify-content: center;
+
+    @include sm-min {
+      justify-content: center;
+    }
+    @include sm {
+      align-items: center;
+      flex-direction: column;
+    }
 
     .btn:first-of-type {
-      margin-right: 20px;
+      @include sm-min {
+        margin-right: $gap;
+      }
+      @include sm {
+        margin-bottom: $gap;
+      }
     }
   }
 }
